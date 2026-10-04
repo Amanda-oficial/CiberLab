@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kedebideri:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-straight/css/uicons-thin-straight.css'> 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" charset="utf-8"></script>
+    <title>Dora Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <img src="./img/logo com fundo.png" alt="DORA">
+            <span class="brand-name">DORA</span>
+            <span class="brand-separator">//</span>
+            <span class="brand-title">CYBER SECURITY OPERATIONS CENTER</span>
+        </div>
+        <div class="brand-status">
+            <span class="status">● SYSTEM ONLINE</span>
+        </div>
+        <div class="brand-pulse">
+            <svg viewBox="0 0 100 30">
+                <path class="heartbeat-base" d="M0 15 H25 L30 15 L35 5 L40 25 L45 15 L50 15 L55 5 L60 25 L65 15 H100"></path>
+                <path class="heartbeat-line" d="M0 15 H25 L30 15 L35 5 L40 25 L45 15 L50 15 L55 5 L60 25 L65 15 H100"></path>
+            </svg>
+        </div>
+        <div class="clock">
+            <span id="clock">00:00:00</span>
+            <small id="date">00/00/0000</small>
+        </div>
+        <div class="user-area">
+            <div class="user-area-one">
+                <button class="header-button-one" title="Notificações">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-count">3</span>
+                </button>
+            </div>
+            <div class="user-area-two">
+                <button class="header-button-two" id="settingsBtn">
+                    <i class="bi bi-gear"></i>
+                </button>
+                <div class="very-two">
+                    <h3>System <strong>Setting</strong></h3>
+                    <div class="very-two-linha"></div>
+                    <div class="very-line">
+                        <p><span class="real">● Real-time monitoring</span></p>
+                        <div class="on"><span>[</span> ON <span>]</span></div>
+                    </div>
+                    <div class="very-line">
+                        <p><span class="alert">● Sound alerts</span></p>
+                        <div class="on"><span>[</span> ON <span>]</span></div>
+                    </div>
+                    <div class="very-line">
+                        <p><span class="auto">● Auto refresh</span></p>
+                        <div class="on"><span>[</span> ON <span>]</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-profile">
+            <div class="user-avatar">
+                <i class="bi bi-person-fill"></i>
+            </div>
+            <div class="user-info">
+                <strong>Amanda</strong>
+                <small>SOC Analyst</small>
+            </div>
+            <i class="fi fi-rr-angle-small-down"></i>
+        </div>
+        <div class="thema">
+            <div class="theme-selector">
+                <span class="btn default active" onclick="changeTheme(event)"></span>
+                <span class="btn blue" onclick="changeTheme(event)"></span>
+                <span class="btn purple" onclick="changeTheme(event)"></span>
+                <span class="btn red" onclick="changeTheme(event)"></span>
+                <span class="btn green" onclick="changeTheme(event)"></span>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="dashboard">
+            <div class="dashboard-one">
+                <div class="dashboard-item">
+                    <i class="bi bi-house-door"></i><span>Dashboard</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="fi fi-tr-worldwide-network"></i><span>Network</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="fi fi-ts-error-bug"></i><span>Threats</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="fi fi-ts-log-file"></i><span>Logs</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="fi fi-rr-stats"></i><span>Analysis</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="fi fi-ts-data-report"></i><span>Reports</span>
+                </div>
+                <div class="dashboard-item">
+                    <i class="bi bi-gear"></i><span>Settings</span>
+                </div>
+            </div>
+            <div class="dashboard-linha"></div>
+            <div class="dashboard-two">
+                <h3>DORA <strong>CYBER LAB</strong></h3>
+                <p>"Security is not a destination, it is a continuous process."</p>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metrics-card">
+                <div class="metrics-icon">
+                    <i class="fi fi-tr-data-encryption"></i>
+                </div>
+                <div class="metrics-info">
+                    <span class="metric-title">THREATS DETECTED</span>
+                    <div class="metrics-value">
+                        <strong>27</strong>
+                        <span class="metrics-up negative">🠕 18%</span>
+                    </div>
+                    <small>vs. previous period</small>
+                </div>
+            </div>
+            <div class="metrics-card">
+                <div class="metrics-icon">
+                    <i class="fi fi-tr-network-analytic"></i>
+                </div>
+                <div class="metrics-info">
+                    <span class="metric-title">NETWORK TRAFFIC</span>
+                    <div class="metrics-value">
+                        <strong>84</strong>
+                        <span class="metrics-up positive">🠕 6%</span>
+                    </div>
+                    <small>band usage</small>
+                </div>
+            </div>
+            <div class="metrics-card">
+                <div class="metrics-icon">
+                    <i class="fi fi-ts-server-key"></i>
+                </div>
+                <div class="metrics-info">
+                    <span class="metric-title">SERVERS</span>
+                    <div class="metrics-value">
+                        <strong>12</strong>
+                        <span class="server-total">/ 12</span>
+                        <span class="online">Online</span>
+                    </div>
+                    <small>no incidents</small>
+                </div>
+            </div>
+            <div class="metrics-card">
+                <div class="metrics-icon">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div class="metrics-info">
+                    <span class="metric-title">ACTIVE USERS</span>
+                    <div class="metrics-value">
+                        <strong>43</strong>
+                        <span class="metrics-up positive">🠕 4%</span>
+                    </div>
+                    <small>currently online</small>
+                </div>
+            </div>
+            <div class="metrics-card">
+                <div class="metrics-icon">
+                    <i class="fi fi-ts-block-brick-fire"></i>
+                </div>
+                <div class="metrics-info">
+                    <span class="metric-title">BLOCKED ATTACKS</span>
+                    <div class="metrics-value">
+                        <strong>3.120</strong>
+                        <span class="metrics-up positive">🠕 12%</span>
+                    </div>
+                    <small>in the last 24 hours</small>
+                </div>
+            </div>
+        </div>
+        <div class="traffic-card">
+    <!-- CABEÇALHO -->
+            <div class="traffic-header">
+                <span class="traffic-title">NETWORK TRAFFIC</span>
+                    <div class="traffic-period">
+                        <button>1h</button>
+                        <button class="active">6h</button>
+                        <button>24h</button>
+                        <button>7d</button>
+                    </div>
+            </div>
+            <!-- LEGENDA -->
+            <div class="traffic-legend">
+                <i class="bi bi-dash-lg"></i><span>Home</span>
+                <i class="bi bi-dash-lg exit"></i><span>Exit</span>
+            </div>
+            <!-- GRÁFICO -->
+            <div class="traffic-chart-container">
+                <canvas id="trafficChart"></canvas>
+            </div>
+        </div>
+        <div class="threat-card">
+            <div class="threat-header">
+                <span class="theat-title">THREAT DISTRIBUTION</span>
+            </div>
+            <div class="threat-content">
+                <div class="pie donut">
+                    <div class="pie-center">
+                        <strong>27</strong>
+                        <span>Total</span>
+                    </div>
+                </div>
+                <div class="legends">
+                    <span>Malware <strong>37%</strong></span>
+                    <span>Phishing <strong>26%</strong></span>
+                    <span>Exploit <strong>14%</strong></span>
+                    <span>DDoS <strong>11%</strong></span>
+                    <span>Outros <strong>12%</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="attack-card">
+            <div class="attack-header">
+                <span class="attack-title">TYPES OF ATTACKS</span>
+            </div>
+            <div class="attack-content">
+                <ul class="numbers">
+                    <li><span>100</span></li>
+                    <li><span>75</span></li>
+                    <li><span>50</span></li>
+                    <li><span>25</span></li>
+                    <li><span>0</span></li>
+                </ul>
+                <ul class="colums">
+                    <li><div class="colums-one" data-percentage="75"></div><span>Malware</span></li>
+                    <li><div class="colums-one" data-percentage="60"></div><span>Phishing</span></li>
+                    <li><div class="colums-one" data-percentage="39"></div><span>Exploit</span></li>
+                    <li><div class="colums-one" data-percentage="52"></div><span>DDoS</span></li>
+                    <li><div class="colums-one" data-percentage="20"></div><span>Brute Force</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert-card">
+            <div class="alert-header">
+                <span class="alert-title">SECURITY ALERTS</span>
+                <button class="alert-all">See all ➞</button>
+            </div>
+            <div class="alert-content">
+                <div class="alert-line">
+                    <div class="alert-icon1">
+                        <i class="fi fi-ts-triangle-warning"></i>
+                    </div>
+                    <div class="alert-info">
+                        <span>Port scan detected</span>
+                        <strong>192.168.1.42 - Port 445</strong>
+                        <small>13:48:22</small>
+                    </div>
+                    <div class="alert-soft critico">
+                        <span>Critical</span>
+                    </div>
+                </div>
+                <div class="alert-line">
+                    <div class="alert-icon2">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="alert-info">
+                        <span>Login attempt failed</span>
+                        <strong>user@empresa.local</strong>
+                        <small>13:42:17</small>
+                    </div>
+                    <div class="alert-soft alto">
+                        <span>High</span>
+                    </div>
+                </div>
+                <div class="alert-line">
+                    <div class="alert-icon3">
+                        <i class="fi fi-ts-browser-lock-alert"></i>
+                    </div>
+                    <div class="alert-info">
+                        <span>Suspicious traffic</span>
+                        <strong>10.0.2.15 - Country: Russia</strong>
+                        <small>13:37:09</small>
+                    </div>
+                    <div class="alert-soft medio">
+                        <span>Medium</span>
+                    </div>
+                </div>
+                <div class="alert-line">
+                    <div class="alert-icon4">
+                        <i class="fi fi-tr-radio-tower"></i>
+                    </div>
+                    <div class="alert-info">
+                        <span>New device on the network</span>
+                        <strong>DESKTOP-0A182C</strong>
+                        <small>13:21:44</small>
+                    </div>
+                    <div class="alert-soft baixo">
+                        <span>Low</span>
+                    </div>
+                </div>
+                <div class="alert-line">
+                    <div class="alert-icon5">
+                        <i class="fi fi-ts-bug-report"></i>
+                    </div>
+                    <div class="alert-info">
+                        <span>Malware signature detected</span>
+                        <strong>Trojan.Generic</strong>
+                        <small>13:15:03</small>
+                    </div>
+                    <div class="alert-soft alto">
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-card">
+            <div class="map-header">
+                <span class="map-title">MAP OF ATTACKS</span>
+            </div>
+            <div class="attack-map">
+                <div class="map-content">
+                     <!-- MAPA -->
+                    <img src="./img/world2.svg" class="world-map">
+                    <!-- LINHAS DE ATAQUE -->
+                    <svg class="map-lines" viewBox="0 0 1000 450">
+                        <!-- EUA → Europa -->
+                        <path class="map-line" d="M180 190 Q430 70 590 130"/>
+                        <!-- EUA → Brasil -->
+                        <path class="map-line" d="M180 190 Q230 320 340 350"/>
+                        <!-- Europa → Austrália -->
+                        <path class="map-line" d="M600 140 Q720 250 790 370"/>
+                        <!-- Europa → Ásia -->
+                        <path class="map-line" d="M600 130 Q700 100 750 210"/>
+                        <!-- EUA → Austrália -->
+                        <path class="map-line" d="M180 190 Q520 420 790 370"/>
+                    </svg>
+                    <!-- PONTOS -->
+                    <div class="attack-point critical" style="left: 18%; top: 43%;">
+                        <span></span>
+                    </div>
+                    <div class="attack-point high" style="left: 60%; top: 33%;">
+                        <span></span>
+                    </div>
+                    <div class="attack-point medium" style="left: 34%; top: 74%;">
+                        <span></span>
+                    </div>
+                    <div class="attack-point high" style="left: 79%; top: 78%;">
+                        <span></span>
+                    </div>
+                    <div class="attack-point low" style="left: 75%; top: 47%;">
+                        <span></span>
+                    </div>
+                    <!-- LEGENDA -->
+                    <div class="map-legend">
+                        <div>
+                            <span class="legend-dot critical"></span>
+                            <span>Crítico</span>
+                        </div>
+                        <div>
+                            <span class="legend-dot high"></span>
+                            <span>Alto</span>
+                        </div>
+                        <div>
+                            <span class="legend-dot medium"></span>
+                            <span>Médio</span>
+                        </div>
+                        <div>
+                            <span class="legend-dot low"></span>
+                            <span>Baixo</span>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="map-actions">
+                    <button id="zoom-out">−</button>
+                    <button id="zoom-in">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-header">
+                <span class="event-title">REAL-TIME EVENT</span>
+                <button class="event-all"><i class="fi fi-tr-bars-filter"></i> Filter</button>
+            </div>
+            <div class="event-content">
+                <div class="event-line">
+                    <div class="event-linha color1"></div>
+                    <div class="event-text">
+                        <span class="event-time">13:52:01</span>
+                    </div>
+                    <div class="event-icon1">    
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="event-info">
+                        <span>Login successful</span>
+                        <strong>192.168.1.23</strong>
+                    </div>
+                    <div class="event-soft info">
+                        <span>INFO</span>
+                    </div>
+                </div>
+                <div class="event-line">
+                    <div class="event-linha color2"></div>
+                    <div class="event-text">
+                        <span class="event-time">13:51:48</span>  
+                    </div>
+                    <div class="event-icon2">
+                        <i class="fi fi-ss-shield-divided-four"></i>
+                    </div>
+                    <div class="event-info">
+                        <span>Firewall blocked</span>
+                        <strong>203.0.113.45</strong>
+                    </div>
+                    <div class="event-soft block">
+                        <span>BLOCKED</span>
+                    </div>
+                </div>
+                <div class="event-line">
+                    <div class="event-linha color1"></div>
+                    <div class="event-text">
+                        <span class="event-time">13:51:32</span>  
+                    </div>
+                    <div class="event-icon3">
+                        <i class="fi fi-ts-password-alt"></i>
+                    </div>
+                    <div class="event-info">
+                        <span>Port scan detected</span>
+                        <strong>192.168.1.42</strong>
+                    </div>
+                    <div class="event-soft high">
+                        <span>HIGH</span>
+                    </div>
+                </div>
+                <div class="event-line">
+                    <div class="event-linha color2"></div>
+                    <div class="event-text">
+                        <span class="event-time">13:49:03</span>  
+                    </div>
+                    <div class="event-icon2">
+                        <i class="fi fi-tr-error-bug"></i>
+                    </div>
+                    <div class="event-info">
+                        <span>Malware detected</span>
+                        <strong>172.16.2.5</strong>
+                    </div>
+                    <div class="event-soft critical">
+                        <span>CRITICAL</span>
+                    </div>
+                </div>
+                <div class="event-line">
+                    <div class="event-linha color1"></div>
+                    <div class="event-text">
+                        <span class="event-time">13:51:48</span>  
+                    </div>
+                    <div class="event-icon4">
+                        <i class="fi fi-ts-site-browser"></i>
+                    </div>
+                    <div class="event-info">
+                        <span>Traffic Anomaly</span>
+                        <strong>192.168.1.77</strong>
+                    </div>
+                    <div class="event-soft medium">
+                        <span>MEDIUM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
