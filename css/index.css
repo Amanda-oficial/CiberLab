@@ -4,15 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
     caret-color: transparent;
+    font-family: 'poppins', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
 }
 
 /* Botões redondos */
@@ -185,7 +185,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 100%;
 }
 
 .brand img{
@@ -224,7 +223,7 @@ body {
 }
 
 .brand-status {
-    margin-left: 400px;
+    margin-left: 460px;
 }
 
 .status {
@@ -311,67 +310,24 @@ body {
 }
 
 .user-area{
-    width: 150px;
     height: 30px;
     display: flex;
     align-items: center;
-    margin-left: 20px;
     border-right: 1px solid #222222;
     border-left: 1px solid #222222;
+    margin-left: 20px;
 }
 
-.user-area-one {
-    display: flex;
-    align-items: center;
-}
-
-.header-button-one {
-    position: relative;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    background: transparent;
-    color: #858585;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.user-area-one i{
-    font-size: 23px;
-    margin-left: 50px;
-    
-}
-
-.header-button-one:hover {
-    color: #d65a16;
-    background: transparent;
-}
-
-.notification-count {
-    position: absolute;
-    top: -4px;
-    left: 40px;
-    min-width: 14px;
-    height: 14px;
-    padding: 0 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #d65a16;
-    color: #fff;
-    font-family: "Unica One", sans-serif;
-    font-size: 8px;
-}
-
+.user-area-one,
 .user-area-two {
+    width: 50px;
+    height: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
+.header-button-one,
 .header-button-two {
     position: relative;
     width: 34px;
@@ -384,6 +340,35 @@ body {
     color: #858585;
     cursor: pointer;
     transition: 0.25s ease;
+}
+
+
+.user-area-one i,
+.user-area-two i {
+    font-size: 23px;
+    margin-left: 0;
+}
+
+.header-button-one:hover {
+    color: #d65a16;
+    background: transparent;
+}
+
+.notification-count {
+    position: absolute;
+    top: -4px;
+    right: 2px;
+    min-width: 14px;
+    height: 14px;
+    padding: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d65a16;
+    color: #fff;
+    font-family: "Unica One", sans-serif;
+    font-size: 8px;
 }
 
 .very-two{
@@ -452,18 +437,13 @@ body {
     color: var(--accent-color);
 }
 
-.user-area-two i{
-    font-size: 23px;
-    margin-left: 90px;
-}
-
 .header-button-two:hover {
     color: var(--accent-soft);
     background: transparent;
 }
 
 .user-profile {
-    width: 190px;
+    width: 160px;
     height: 30px;
     margin-left: 19px;
     display: flex;
@@ -488,7 +468,7 @@ body {
     font-size: 12px;
     background: var(--border-soft);
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .user-info {
@@ -529,25 +509,24 @@ body {
     justify-content: space-between;
     height: auto;
     padding: 10px;
+    height: 0;
     background-color: var(--bg-color);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
 }
 
 .dashboard{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 220px;
-    height: 40vw;
+    min-height: calc(100% - 110px);
     margin: 20px;
     border-radius: 8px; /* opcional, para suavizar */
-    margin-bottom: 100px;
     background: rgba(10, 10, 10, 0.09);
     backdrop-filter: blur( 10px);
     border: 1px solid var(--border-color);
@@ -555,6 +534,10 @@ body {
         0 0 2px var(--border-color),
         0 0 4px var(--border-color),
         0 0 6px var(--border-color);
+    grid-template-columns: 220px 1fr;
+    gap: 5px;
+    font-family: "Fira Code", monospace;
+    margin-bottom: auto;
 }
 
 .dashboard-one {
@@ -594,7 +577,7 @@ body {
 
 .dashboard-linha{
     width: 80%;
-    height: 2px; /* Altura total da linha */
+    min-height: 2px; /* Altura total da linha */
     /* Criamos os gradientes: o primeiro é a linha brilhante, o segundo é a linha base */
     background-image: linear-gradient(to right, var(--accent-color), var(--accent-color)), /* Cor brilhante (Ciano) */
                       linear-gradient(to right, var(--accent-bg), var(--accent-bg)); /* Cor base (Cinza escuro) */
@@ -606,7 +589,7 @@ body {
     background-repeat: no-repeat;
     background-position: left center, /* Alinha a parte brilhante na direita */
                          right center;
-    margin-top: 16pc;
+    margin-top: 250px;
 }
 
 .dashboard-two{
@@ -636,17 +619,17 @@ body {
 }
 
 .metrics {
-    width: calc(100% - 265px);
-    margin-left: 255px;
-    margin-bottom: 740px;
+    width: calc(100% - 260px);
+    margin-bottom: 730px;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 10px;
+    font-family: "Fira Code", monospace;
 }
 
 .metrics-card {
     min-width: 0;
-    height: 105px;
+    height: 100px;
     display: flex;
     align-items: center;
     padding: 15px;
@@ -659,7 +642,7 @@ body {
         0 0 6px var(--border-color);
     border-radius: 8px;
     transition: 0.25s ease;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .metrics-icon {
@@ -744,7 +727,7 @@ body {
 .traffic-card{
     position: absolute;
     width: 25%;
-    height: 280px;
+    min-height: calc(100% - 680px);
     padding: 14px;
     background: var(--card-color);
     backdrop-filter: blur( 10px);
@@ -755,8 +738,8 @@ body {
         0 0 6px var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    margin-left: 27.9vh;
-    margin-bottom: 33vh;
+    margin-left: 268px;
+    margin-bottom: 315px;
 }
 
 .traffic-header {
@@ -858,7 +841,7 @@ body {
     --c5: #4f5054;
     position: absolute;
     width: 18%;
-    height: 280px;
+    min-height: calc(100% - 680px);
     padding: 14px;
     background: var(--card-color);
     backdrop-filter: blur( 10px);
@@ -869,8 +852,8 @@ body {
         0 0 6px var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    margin-left: 40vw;
-    margin-bottom: 33vh;
+    margin-left: 770px;
+    margin-bottom: 315px;
 }
 
 .threat-header {
@@ -879,7 +862,7 @@ body {
     align-items: center;
 }
 
-.theat-title {
+.threat-title {
     font-family: "Fira Code", monospace;
     font-size: 14px;
     font-weight: 500;
@@ -1016,7 +999,7 @@ body {
 .attack-card{
     position: absolute;
     width: 18%;
-    height: 280px;
+    min-height: calc(100% - 680px);
     padding: 14px;
     background: var(--card-color);
     backdrop-filter: blur( 10px);
@@ -1027,8 +1010,8 @@ body {
         0 0 6px var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    margin-left: 59.2vw;
-    margin-bottom: 33vh;
+    margin-left: 1140px;
+    margin-bottom: 315px;
 }
 
 .attack-header {
@@ -1049,7 +1032,7 @@ body {
 
 .attack-content{
     width: 600px;
-    height: 300px;
+    height: 200px;
     display: block;
 }
 
@@ -1154,8 +1137,8 @@ body {
 
 .alert-card{
     position: absolute;
-    width: 20%;
-    height: 450px;
+    width: 390px;
+    min-height: calc(100% - 500px);
     padding: 14px;
     background: var(--card-color);
     backdrop-filter: blur( 10px);
@@ -1166,8 +1149,8 @@ body {
         0 0 6px var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    margin-left: 78.4vw;
-    margin-bottom: 15vh;
+    margin-left: 1510px;
+    margin-bottom: 140px;
 }
 
 .alert-header {
@@ -1879,7 +1862,6 @@ body {
     border: 1px solid rgba(255, 193, 7, 0.4);
 }
 
-
 @media (max-width: 1700px) {
 
     .brand-title {
@@ -1894,12 +1876,49 @@ body {
         margin-left: 0;
     }
 
+    .threat-card {
+        margin-left: 770px;
+        width: auto;
+    }
+
 }
 
+@media (max-width: 1600px) {
 
+    .dashboard {
+        grid-template-columns: 200px 1fr;
+        gap: 15px;
+    }
 
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .charts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1400px) {
+    .brand-status {
+        margin-left: 230px;
+    }
+}
 
 @media (max-width: 1200px) {
+
+    .dashboard {
+        grid-template-columns: 180px 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
     .metrics {
         grid-template-columns: repeat(3, 1fr);
     }
